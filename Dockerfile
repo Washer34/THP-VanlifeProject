@@ -65,9 +65,9 @@ ENV RAILS_LOG_TO_STDOUT="1" \
 
 # Entrypoint prepares the database.
 RUN chmod +x /rails/bin/docker-entrypoint
+RUN chmod +x ./bin/rails
 ENTRYPOINT ["/rails/bin/docker-entrypoint"]
 
 # Start the server by default, this can be overwritten at runtime
 EXPOSE 3000
-RUN chmod +x ./bin/rails
 CMD ["./bin/rails", "server"]
